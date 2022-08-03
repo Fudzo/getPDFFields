@@ -27,7 +27,7 @@ const mainRoutePost = async (req, res) => {
         fieldsArray.push(name);
     
       });
-      console.log(fieldsArray);
+    //   console.log(fieldsArray);
     res.json({fieldsArray, formName:fileName.name});
 };
 
