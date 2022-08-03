@@ -31,6 +31,12 @@ const mainRoutePost = async (req, res) => {
     res.json({fieldsArray, formName:fileName.name});
 };
 
-app.route('/uploadpdf').post(mainRoutePost);
+const vratiNesto = (req, res) => {
+    res.status(200).json({ radi: true })
+}
+
+app.route('/uploadpdf').post(mainRoutePost).get(vratiNesto);
 
 app.listen(3000);
+
+module.exports = app;
