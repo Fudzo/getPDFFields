@@ -5,16 +5,13 @@ const { PDFDocument } = require('pdf-lib');
 
 const app = express();
 
-app.use(fileupload());
 app.use(cors());
 app.use(express.json());
+app.use(fileupload());
 
 let fieldsArray = [];
 
 const mainRoutePost = async (req, res) => {
-    console.log('asdasd');
-
-// console.log(req.files.myFile);
     fieldsArray = [];
     const fileName = req.files.myFile;
     const pdfDoccc = await PDFDocument.load(fileName.data);
